@@ -82,8 +82,8 @@
 
     function init() {
       // create camera with perspective view
-      camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
-      camera.position.z = 7;
+      camera = new THREE.PerspectiveCamera(15, window.innerWidth / window.innerHeight, 0.1, 1000);
+      camera.position.z = 14;
 
       // create scene
       scene = new THREE.Scene();
@@ -93,7 +93,7 @@
       var loader = new THREE.GLTFLoader();
       loader.load('./model/crystal.gltf', function (gltf) {
         model = gltf.scene;
-        model.scale.set(0.4, 0.4, 0.4);
+        model.scale.set(0.2, 0.2, 0.2);
         // add emissive materials to the model and the tracks
         model.traverse((child) => {
           if (child.isMesh) {
@@ -165,13 +165,13 @@
       controls.enableDamping = true;
       controls.dampingFactor = 0.25;
       controls.enableZoom = true;
-      controls.minDistance = 1.5;
-      controls.maxDistance = 50;
+      controls.minDistance = 4;
+      controls.maxDistance = 30;
       controls.minPolarAngle = 0;
       controls.enablePan = false; // disable panning
 
       controls.autoRotate = true;
-      controls.autoRotateSpeed = 11;
+      controls.autoRotateSpeed = 10;
       controls.enableDamping = true;
 
     }
