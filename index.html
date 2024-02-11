@@ -83,7 +83,7 @@
     function init() {
       // create camera with perspective view
       camera = new THREE.PerspectiveCamera(17, window.innerWidth / window.innerHeight, 0.1, 1000);
-      camera.position.z = 14;
+      camera.position.z = 12;
 
       // create scene
       scene = new THREE.Scene();
@@ -136,7 +136,7 @@
             model.traverse(function (child) {
               if (child.isMesh) {
                 child.material.envMap = envMap;
-                child.material.envMapIntensity = 1.5; // adjust the intensity of the environment map
+                child.material.envMapIntensity = 1.1; // adjust the intensity of the environment map
                 child.material.needsUpdate = true;
               }
             });
